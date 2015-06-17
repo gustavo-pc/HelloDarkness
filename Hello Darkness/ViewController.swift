@@ -20,7 +20,7 @@ class ViewController: UIViewController, AudioStreamRecorderDelegate {
         recorder.delegate = self;
         recorder.outputMuted = true;
         recorder.beAwesome();
-        player.accumulatedBuffersBeforeStarting = 50;
+        player.accumulatedBuffersBeforeStarting = 0;
         player.startReceivingAudio();
     }
     
@@ -31,10 +31,6 @@ class ViewController: UIViewController, AudioStreamRecorderDelegate {
         free(buffer.mData);
         
         processBufferData(bufferData);
-        
-        
-//        player.enqueueBuffer(buffer);
-
     }
     
     func processBufferData(bufferData: NSData) {

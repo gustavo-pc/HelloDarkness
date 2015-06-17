@@ -20,10 +20,10 @@ static OSStatus playbackCallback (void *inRefCon,
     
     AudioStreamPlayer *player = (__bridge AudioStreamPlayer *)inRefCon;
     
-    AudioBuffer dequeued = retrieveBuffer(player->unplayedBuffers, mutex);
+    AudioBuffer dequeued = retrieveBuffer(&(player->unplayedBuffers), mutex);
     
     if (dequeued.mDataByteSize != 0){
-        memcpy(ioData->mBuffers[0].mData, dequeued.mData, dequeued.mNumberChannels);
+        memcpy(ioData->mBuffers[0].mData, dequeued.mData, dequeued.mDataByteSize);
     }
     else {
         *ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
@@ -112,7 +112,7 @@ static OSStatus playbackCallback (void *inRefCon,
         [self configureAudioSession];
         [self setupPlaybackUnit];
         
-        unplayedBuffers.mCurrentBuffers = 0;
+        initalizeDynamicBufferList(&unplayedBuffers);
         _accumulatedBuffersBeforeStarting = 0;
         
         mutex = dispatch_semaphore_create(1);
@@ -134,15 +134,8 @@ static OSStatus playbackCallback (void *inRefCon,
 
 -(void)enqueueBuffer:(AudioBuffer)buffer{
 
-    addBuffer(buffer, unplayedBuffers, mutex);
+    addBuffer(buffer, &(unplayedBuffers), mutex);
     
-
-    
-    
-    if (unplayedBuffers.mCurrentBuffers > DBL_CAPACITY) {
-        unplayedBuffers.mCurrentBuffers = 0;
-        printf("zerou record \b");
-    }
     
     if (_accumulatedBuffersBeforeStarting == unplayedBuffers.mCurrentBuffers) {
         AudioOutputUnitStart(playbackUnit);

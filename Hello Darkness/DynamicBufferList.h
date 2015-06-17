@@ -20,14 +20,14 @@
 
 typedef struct DynamicAudioBufferList{
     UInt32      mCurrentBuffers;
-    AudioBuffer mBuffers[DBL_CAPACITY];
     UInt32      mPlayPosition;
+    AudioBuffer mBuffers[DBL_CAPACITY];
     
 } DynamicAudioBufferList;
 
 
-void initalizeDynamicBufferList(DynamicAudioBufferList bufferList);
+void initalizeDynamicBufferList(DynamicAudioBufferList *bufferList);
 
-void addBuffer(AudioBuffer buffer, DynamicAudioBufferList inBufferList, dispatch_semaphore_t usingSemaphore);
+void addBuffer(AudioBuffer buffer, DynamicAudioBufferList *inBufferList, dispatch_semaphore_t usingSemaphore);
 
-AudioBuffer retrieveBuffer(DynamicAudioBufferList fromBufferList, dispatch_semaphore_t usingSemaphore);
+AudioBuffer retrieveBuffer(DynamicAudioBufferList *fromBufferList, dispatch_semaphore_t usingSemaphore);

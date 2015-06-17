@@ -141,12 +141,12 @@ class SendViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSe
             })
             var err: NSError?
             
-            self.outputStream = mySession?.startStreamWithName("stream", toPeer: peerID, error: &err)
-            if let outputStream = outputStream {
-                outputStream.delegate = self
-                outputStream.scheduleInRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
-                outputStream.open()
-            }
+//            self.outputStream = mySession?.startStreamWithName("stream", toPeer: peerID, error: &err)
+//            if let outputStream = outputStream {
+//                outputStream.delegate = self
+//                outputStream.scheduleInRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
+//                outputStream.open()
+//            }
             
         case .Connecting:
             println("Connecting to \(peerID.displayName)")
