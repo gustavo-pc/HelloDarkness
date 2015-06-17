@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC2FF6641B1C7A2400AF6574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6631B1C7A2400AF6574 /* AppDelegate.swift */; };
+		EC2FF6661B1C7A2400AF6574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6651B1C7A2400AF6574 /* ViewController.swift */; };
+		EC2FF6691B1C7A2400AF6574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF6671B1C7A2400AF6574 /* Main.storyboard */; };
+		EC2FF66B1B1C7A2400AF6574 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF66A1B1C7A2400AF6574 /* Images.xcassets */; };
+		EC2FF66E1B1C7A2400AF6574 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC2FF66C1B1C7A2400AF6574 /* LaunchScreen.xib */; };
+		EC2FF67A1B1C7A2400AF6574 /* Hello_DarknessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6791B1C7A2400AF6574 /* Hello_DarknessTests.swift */; };
+		EC2FF6841B1C851400AF6574 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6831B1C851400AF6574 /* SendViewController.swift */; };
+		EC2FF6861B1C852700AF6574 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6851B1C852700AF6574 /* ReceiveViewController.swift */; };
+		EC2FF68B1B1C859E00AF6574 /* Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF68A1B1C859E00AF6574 /* Recorder.m */; };
+		EC2FF68D1B1C86FF00AF6574 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2FF68C1B1C86FF00AF6574 /* Foundation.framework */; };
+		EC2FF68F1B1C874F00AF6574 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2FF68E1B1C874F00AF6574 /* AudioToolbox.framework */; };
+		ECAC63841B1F414B00920415 /* AudioStreamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAC63831B1F414B00920415 /* AudioStreamRecorder.m */; };
+		ECAC63861B1F7AD200920415 /* AudioStreamPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAC63851B1F7AD200920415 /* AudioStreamPlayer.m */; };
+		ECDA11B61B31DDC600693415 /* DynamicBufferList.c in Sources */ = {isa = PBXBuildFile; fileRef = ECDA11B41B31DDC600693415 /* DynamicBufferList.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC2FF6741B1C7A2400AF6574 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC2FF6561B1C7A2400AF6574 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC2FF65D1B1C7A2400AF6574;
+			remoteInfo = "Hello Darkness";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC2FF65E1B1C7A2400AF6574 /* Hello Darkness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello Darkness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2FF6621B1C7A2400AF6574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC2FF6631B1C7A2400AF6574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC2FF6651B1C7A2400AF6574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC2FF6681B1C7A2400AF6574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC2FF66A1B1C7A2400AF6574 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EC2FF66D1B1C7A2400AF6574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EC2FF6731B1C7A2400AF6574 /* Hello DarknessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello DarknessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2FF6781B1C7A2400AF6574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC2FF6791B1C7A2400AF6574 /* Hello_DarknessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_DarknessTests.swift; sourceTree = "<group>"; };
+		EC2FF6831B1C851400AF6574 /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		EC2FF6851B1C852700AF6574 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
+		EC2FF6871B1C857800AF6574 /* Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recorder.h; sourceTree = "<group>"; };
+		EC2FF6891B1C859E00AF6574 /* Hello Darkness-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hello Darkness-Bridging-Header.h"; sourceTree = "<group>"; };
+		EC2FF68A1B1C859E00AF6574 /* Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recorder.m; sourceTree = "<group>"; };
+		EC2FF68C1B1C86FF00AF6574 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EC2FF68E1B1C874F00AF6574 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		ECAC63821B1F414B00920415 /* AudioStreamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamRecorder.h; sourceTree = "<group>"; };
+		ECAC63831B1F414B00920415 /* AudioStreamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamRecorder.m; sourceTree = "<group>"; };
+		ECAC63851B1F7AD200920415 /* AudioStreamPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamPlayer.m; sourceTree = "<group>"; };
+		ECAC63871B1F7AE200920415 /* AudioStreamPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioStreamPlayer.h; sourceTree = "<group>"; };
+		ECDA11B41B31DDC600693415 /* DynamicBufferList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DynamicBufferList.c; sourceTree = "<group>"; };
+		ECDA11B51B31DDC600693415 /* DynamicBufferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicBufferList.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC2FF65B1B1C7A2400AF6574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2FF68F1B1C874F00AF6574 /* AudioToolbox.framework in Frameworks */,
+				EC2FF68D1B1C86FF00AF6574 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC2FF6701B1C7A2400AF6574 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC2FF6551B1C7A2400AF6574 = {
+			isa = PBXGroup;
+			children = (
+				EC2FF6601B1C7A2400AF6574 /* Hello Darkness */,
+				EC2FF6761B1C7A2400AF6574 /* Hello DarknessTests */,
+				EC2FF65F1B1C7A2400AF6574 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC2FF65F1B1C7A2400AF6574 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC2FF65E1B1C7A2400AF6574 /* Hello Darkness.app */,
+				EC2FF6731B1C7A2400AF6574 /* Hello DarknessTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC2FF6601B1C7A2400AF6574 /* Hello Darkness */ = {
+			isa = PBXGroup;
+			children = (
+				EC2FF6881B1C858000AF6574 /* My Old Friend */,
+				EC2FF6651B1C7A2400AF6574 /* ViewController.swift */,
+				EC2FF6831B1C851400AF6574 /* SendViewController.swift */,
+				EC2FF6851B1C852700AF6574 /* ReceiveViewController.swift */,
+				EC2FF6671B1C7A2400AF6574 /* Main.storyboard */,
+				EC2FF6611B1C7A2400AF6574 /* Supporting Files */,
+			);
+			path = "Hello Darkness";
+			sourceTree = "<group>";
+		};
+		EC2FF6611B1C7A2400AF6574 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC2FF6871B1C857800AF6574 /* Recorder.h */,
+				EC2FF68A1B1C859E00AF6574 /* Recorder.m */,
+				EC2FF68E1B1C874F00AF6574 /* AudioToolbox.framework */,
+				EC2FF68C1B1C86FF00AF6574 /* Foundation.framework */,
+				EC2FF6631B1C7A2400AF6574 /* AppDelegate.swift */,
+				EC2FF6891B1C859E00AF6574 /* Hello Darkness-Bridging-Header.h */,
+				EC2FF66A1B1C7A2400AF6574 /* Images.xcassets */,
+				EC2FF66C1B1C7A2400AF6574 /* LaunchScreen.xib */,
+				EC2FF6621B1C7A2400AF6574 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC2FF6761B1C7A2400AF6574 /* Hello DarknessTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC2FF6791B1C7A2400AF6574 /* Hello_DarknessTests.swift */,
+				EC2FF6771B1C7A2400AF6574 /* Supporting Files */,
+			);
+			path = "Hello DarknessTests";
+			sourceTree = "<group>";
+		};
+		EC2FF6771B1C7A2400AF6574 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC2FF6781B1C7A2400AF6574 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EC2FF6881B1C858000AF6574 /* My Old Friend */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA11B51B31DDC600693415 /* DynamicBufferList.h */,
+				ECDA11B41B31DDC600693415 /* DynamicBufferList.c */,
+				ECAC63821B1F414B00920415 /* AudioStreamRecorder.h */,
+				ECAC63831B1F414B00920415 /* AudioStreamRecorder.m */,
+				ECAC63871B1F7AE200920415 /* AudioStreamPlayer.h */,
+				ECAC63851B1F7AD200920415 /* AudioStreamPlayer.m */,
+			);
+			name = "My Old Friend";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC2FF65D1B1C7A2400AF6574 /* Hello Darkness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC2FF67D1B1C7A2400AF6574 /* Build configuration list for PBXNativeTarget "Hello Darkness" */;
+			buildPhases = (
+				EC2FF65A1B1C7A2400AF6574 /* Sources */,
+				EC2FF65B1B1C7A2400AF6574 /* Frameworks */,
+				EC2FF65C1B1C7A2400AF6574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hello Darkness";
+			productName = "Hello Darkness";
+			productReference = EC2FF65E1B1C7A2400AF6574 /* Hello Darkness.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC2FF6721B1C7A2400AF6574 /* Hello DarknessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC2FF6801B1C7A2400AF6574 /* Build configuration list for PBXNativeTarget "Hello DarknessTests" */;
+			buildPhases = (
+				EC2FF66F1B1C7A2400AF6574 /* Sources */,
+				EC2FF6701B1C7A2400AF6574 /* Frameworks */,
+				EC2FF6711B1C7A2400AF6574 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC2FF6751B1C7A2400AF6574 /* PBXTargetDependency */,
+			);
+			name = "Hello DarknessTests";
+			productName = "Hello DarknessTests";
+			productReference = EC2FF6731B1C7A2400AF6574 /* Hello DarknessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC2FF6561B1C7A2400AF6574 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = BEPiD;
+				TargetAttributes = {
+					EC2FF65D1B1C7A2400AF6574 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					EC2FF6721B1C7A2400AF6574 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = EC2FF65D1B1C7A2400AF6574;
+					};
+				};
+			};
+			buildConfigurationList = EC2FF6591B1C7A2400AF6574 /* Build configuration list for PBXProject "Hello Darkness" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC2FF6551B1C7A2400AF6574;
+			productRefGroup = EC2FF65F1B1C7A2400AF6574 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC2FF65D1B1C7A2400AF6574 /* Hello Darkness */,
+				EC2FF6721B1C7A2400AF6574 /* Hello DarknessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC2FF65C1B1C7A2400AF6574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2FF6691B1C7A2400AF6574 /* Main.storyboard in Resources */,
+				EC2FF66E1B1C7A2400AF6574 /* LaunchScreen.xib in Resources */,
+				EC2FF66B1B1C7A2400AF6574 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC2FF6711B1C7A2400AF6574 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC2FF65A1B1C7A2400AF6574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2FF6861B1C852700AF6574 /* ReceiveViewController.swift in Sources */,
+				EC2FF6661B1C7A2400AF6574 /* ViewController.swift in Sources */,
+				ECAC63841B1F414B00920415 /* AudioStreamRecorder.m in Sources */,
+				ECAC63861B1F7AD200920415 /* AudioStreamPlayer.m in Sources */,
+				EC2FF6641B1C7A2400AF6574 /* AppDelegate.swift in Sources */,
+				EC2FF68B1B1C859E00AF6574 /* Recorder.m in Sources */,
+				EC2FF6841B1C851400AF6574 /* SendViewController.swift in Sources */,
+				ECDA11B61B31DDC600693415 /* DynamicBufferList.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC2FF66F1B1C7A2400AF6574 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC2FF67A1B1C7A2400AF6574 /* Hello_DarknessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC2FF6751B1C7A2400AF6574 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC2FF65D1B1C7A2400AF6574 /* Hello Darkness */;
+			targetProxy = EC2FF6741B1C7A2400AF6574 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC2FF6671B1C7A2400AF6574 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC2FF6681B1C7A2400AF6574 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC2FF66C1B1C7A2400AF6574 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC2FF66D1B1C7A2400AF6574 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC2FF67B1B1C7A2400AF6574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC2FF67C1B1C7A2400AF6574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC2FF67E1B1C7A2400AF6574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Hello Darkness/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hello Darkness/Hello Darkness-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EC2FF67F1B1C7A2400AF6574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Hello Darkness/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hello Darkness/Hello Darkness-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		EC2FF6811B1C7A2400AF6574 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hello DarknessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hello Darkness.app/Hello Darkness";
+			};
+			name = Debug;
+		};
+		EC2FF6821B1C7A2400AF6574 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hello DarknessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hello Darkness.app/Hello Darkness";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC2FF6591B1C7A2400AF6574 /* Build configuration list for PBXProject "Hello Darkness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC2FF67B1B1C7A2400AF6574 /* Debug */,
+				EC2FF67C1B1C7A2400AF6574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC2FF67D1B1C7A2400AF6574 /* Build configuration list for PBXNativeTarget "Hello Darkness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC2FF67E1B1C7A2400AF6574 /* Debug */,
+				EC2FF67F1B1C7A2400AF6574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC2FF6801B1C7A2400AF6574 /* Build configuration list for PBXNativeTarget "Hello DarknessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC2FF6811B1C7A2400AF6574 /* Debug */,
+				EC2FF6821B1C7A2400AF6574 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC2FF6561B1C7A2400AF6574 /* Project object */;
+}
