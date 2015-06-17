@@ -38,12 +38,13 @@ static OSStatus mySelfWrittenCallback(void *inRefCon,
     
     if (!recorder.outputMuted) {
         memcpy(ioData->mBuffers[0].mData, temporaryBuffer.mData, temporaryBuffer.mDataByteSize);
-        //    ioData->mBuffers[0].mData = temporaryBuffer.mData;
     }else {
         *ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
     }
     
     [recorder deliverBuffer:temporaryBuffer];
+    
+//    free(temporaryBuffer.mData);
     
     return 0;
 }

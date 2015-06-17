@@ -24,6 +24,7 @@ static OSStatus playbackCallback (void *inRefCon,
     
     if (dequeued.mDataByteSize != 0){
         memcpy(ioData->mBuffers[0].mData, dequeued.mData, dequeued.mDataByteSize);
+//        free(dequeued.mData);
     }
     else {
         *ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;

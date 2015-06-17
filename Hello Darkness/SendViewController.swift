@@ -25,15 +25,11 @@ class SendViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSe
 //        let textData = NSKeyedArchiver.archivedDataWithRootObject(messageTextField.text)
 //        self.outputStream?.write(UnsafePointer(textData.bytes), maxLength: textData.length)
     }
-  
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.setupConnectivity()
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
+        
+        self.setupConnectivity()
         recorder.delegate = self;
         recorder.outputMuted = true;
         recorder.beAwesome();

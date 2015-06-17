@@ -17,11 +17,11 @@ class ViewController: UIViewController, AudioStreamRecorderDelegate {
     var buffers: Array<AudioBuffer> = Array<AudioBuffer>();
     
     override func viewDidLoad() {
-        recorder.delegate = self;
-        recorder.outputMuted = true;
-        recorder.beAwesome();
-        player.accumulatedBuffersBeforeStarting = 0;
-        player.startReceivingAudio();
+//        recorder.delegate = self;
+//        recorder.outputMuted = true;
+//        recorder.beAwesome();
+//        player.accumulatedBuffersBeforeStarting = 0;
+//        player.startReceivingAudio();
     }
     
     

@@ -47,6 +47,9 @@ AudioBuffer retrieveBuffer(DynamicAudioBufferList *fromBufferList, dispatch_sema
         retrieved.mNumberChannels = fromBufferList->mBuffers[fromBufferList->mPlayPosition].mNumberChannels;
         retrieved.mData = malloc(fromBufferList->mBuffers[fromBufferList->mPlayPosition].mDataByteSize);
         memcpy(retrieved.mData, fromBufferList->mBuffers[fromBufferList->mPlayPosition].mData, fromBufferList->mBuffers[fromBufferList->mPlayPosition].mDataByteSize);
+        
+        free(fromBufferList->mBuffers[fromBufferList->mPlayPosition].mData);
+        
         fromBufferList->mPlayPosition++;
         
         printf("lendo na posicao %i\n", (unsigned int)fromBufferList->mPlayPosition);
