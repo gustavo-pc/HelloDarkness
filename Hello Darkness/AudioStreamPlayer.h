@@ -19,9 +19,9 @@
     NSArray *receivedBuffers;
     
     @public DynamicAudioBufferList unplayedBuffers;
+    @public NSInputStream *inputStream;
 }
 
-@property NSInputStream *inputStream;
 
 @property int accumulatedBuffersBeforeStarting;
 
@@ -30,5 +30,10 @@
 - (void)stopReceivingAudio;
 
 - (void)enqueueBuffer:(AudioBuffer)buffer;
+
+- (void)setInputStream:(NSInputStream *)newStream;
+
+#pragma mark Testing Stuff
+- (void)readAndPrint;
 
 @end

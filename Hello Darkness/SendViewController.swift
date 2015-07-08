@@ -14,9 +14,13 @@ class SendViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSe
     var myID : MCPeerID?
     var mySession: MCSession?
     var myBrowser: MCNearbyServiceBrowser?
-    var outputStream: NSOutputStream?
+//    var outputStream: NSOutputStream?
     
     let recorder = AudioStreamRecorder();
+    
+    @IBOutlet weak var writeOnStreamButton: UIButton!
+    
+    //MARK: VC Lifecycle
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
@@ -33,6 +37,19 @@ class SendViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSe
         
         self.stopConnectivity()
     }
+    
+    //MARK: IBActions
+    
+    var i = 0;
+    
+    @IBAction func writeOnStream() {
+        
+        let numberData = NSKeyedArchiver.archivedDataWithRootObject("Teste")
+        
+//        recorder.outputStream.write(UnsafePointer(numberData.bytes), maxLength: numberData.length)
+    }
+    
+    //MARK: Setup
     
     func setupConnectivity() {
         
@@ -58,7 +75,7 @@ class SendViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSe
         if (mySession?.connectedPeers.count != 0) {
             
             let bufferData = NSData(bytes: buffer.mData, length: Int(buffer.mDataByteSize));
-            mySession?.sendData(bufferData, toPeers: mySession?.connectedPeers, withMode: .Unreliable, error: nil);
+//            mySession?.sendData(bufferData, toPeers: mySession?.connectedPeers, withMode: .Unreliable, error: nil);
             
         }
         
@@ -70,8 +87,13 @@ class SendViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSe
         switch state {
         case .Connected:
             self.recorder.outputStream = mySession?.startStreamWithName("stream", toPeer: peerID, error: nil)
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({ Void in
+                self.writeOnStreamButton.enabled = true
+            })
+            
             if let outputStream = recorder.outputStream {
-//                outputStream.delegate = recorder
+//                outputStream.delegate = self.recorder
                 outputStream.scheduleInRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
                 outputStream.open()
             }
@@ -102,4 +124,13 @@ class SendViewController: UIViewController, MCNearbyServiceBrowserDelegate, MCSe
     
     func browser(browser: MCNearbyServiceBrowser!, lostPeer peerID: MCPeerID!) {}
 
+    //MARK: Stream Delegate
+    
+    var counter = 0;
+    
+    func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
+        if (eventCode == NSStreamEvent.HasSpaceAvailable){
+            println("TA LIVRE: \(counter++ * 143) bytes escritos")
+        }
+    }
 }

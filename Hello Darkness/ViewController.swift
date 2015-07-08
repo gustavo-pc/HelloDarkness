@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, AudioStreamRecorderDelegate {
     
-    var recorder = AudioStreamRecorder();
+    let recorder = AudioStreamRecorder();
     
     let player = AudioStreamPlayer();
     

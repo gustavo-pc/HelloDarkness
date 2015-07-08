@@ -141,6 +141,7 @@ static OSStatus mySelfWrittenCallback(void *inRefCon,
         [self configureAudioSession];
         [self configureAudioUnitsWithCallback];
         _outputMuted = NO;
+         
     }
     return self;
 }
@@ -160,8 +161,10 @@ static OSStatus mySelfWrittenCallback(void *inRefCon,
     
     //    NSData *bufferData = [NSData dataWithBytes:deliveredBuffer.mData length:deliveredBuffer.mDataByteSize];
     
-    [self.delegate audioStreamRecorder:self didRenderNewBuffer:deliveredBuffer];
+//    [self.delegate audioStreamRecorder:self didRenderNewBuffer:deliveredBuffer];
+
     
+    printf("%d bytes written\n", [self.outputStream write:(const uint8_t *)deliveredBuffer.mData maxLength:deliveredBuffer.mDataByteSize]);
 }
 
 - (void) muteOutput {

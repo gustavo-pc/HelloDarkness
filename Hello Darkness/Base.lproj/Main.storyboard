@@ -50,9 +50,24 @@
                     <view key="view" contentMode="scaleToFill" id="dNh-dj-HEg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Whk-0P-BH7">
+                                <rect key="frame" x="127" y="269" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Read">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="readBytes" destination="jQ4-VV-p7R" eventType="touchUpInside" id="Hdn-JR-Rhy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Receiver" id="RUc-Ka-PhA"/>
+                    <connections>
+                        <outlet property="readButton" destination="Whk-0P-BH7" id="U9f-GC-px3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMm-WE-Fs3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,9 +80,24 @@
                     <view key="view" contentMode="scaleToFill" id="lDV-83-A16">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kan-AK-OS6">
+                                <rect key="frame" x="105" y="269" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Write on Stream">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="writeOnStream" destination="0Dl-4g-IvM" eventType="touchUpInside" id="3VV-qK-wNS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sender" id="c1G-wQ-p7n"/>
+                    <connections>
+                        <outlet property="writeOnStreamButton" destination="kan-AK-OS6" id="DFS-ay-FSG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIL-Io-szK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

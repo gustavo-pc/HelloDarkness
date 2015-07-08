@@ -20,16 +20,29 @@ static OSStatus playbackCallback (void *inRefCon,
     
     AudioStreamPlayer *player = (__bridge AudioStreamPlayer *)inRefCon;
     
-    AudioBuffer dequeued = retrieveBuffer(&(player->unplayedBuffers), mutex);
+//    AudioBuffer dequeued = retrieveBuffer(&(player->unplayedBuffers), mutex);
     
-    if (dequeued.mDataByteSize != 0){
-        memcpy(ioData->mBuffers[0].mData, dequeued.mData, dequeued.mDataByteSize);
-//        free(dequeued.mData);
+    uint8_t accumulate[256];
+    
+    int readBytes = [player->inputStream read:accumulate maxLength:256];
+    
+    if (readBytes == 256){
+        memcpy(ioData->mBuffers[0].mData, (const void *)accumulate, ioData->mBuffers[0].mDataByteSize);
     }
-    else {
+    
+    if (readBytes == 0) {
         *ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
         memset(ioData->mBuffers[0].mData, 0, sizeof(ioData->mBuffers[0].mData));
     }
+    
+//    if (dequeued.mDataByteSize != 0){
+//        memcpy(ioData->mBuffers[0].mData, dequeued.mData, dequeued.mDataByteSize);
+//        free(dequeued.mData);
+//    }
+//    else {
+//        *ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
+//        memset(ioData->mBuffers[0].mData, 0, sizeof(ioData->mBuffers[0].mData));
+//    }
     
     return 0;
 }
@@ -117,7 +130,6 @@ static OSStatus playbackCallback (void *inRefCon,
         _accumulatedBuffersBeforeStarting = 0;
         
         mutex = dispatch_semaphore_create(1);
-        
     }
     return self;
 }
@@ -145,20 +157,66 @@ static OSStatus playbackCallback (void *inRefCon,
     
 }
 
+-(void)setInputStream:(NSInputStream *)newStream{
+    inputStream = newStream;
+    inputStream.delegate = self;
+    [inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [inputStream open];
+}
 
 #pragma NSStream Delegate
 
 -(void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{
+
+//    uint8_t inputBuffer[1024];
+//    NSInteger numberOfBytesRead = 0;
+//    NSUInteger bytesAvailable = 0;
+    
     switch (eventCode) {
-        case NSStreamEventHasBytesAvailable:
-            //TODO: Magic Here
+        case NSStreamEventHasBytesAvailable:;
+
             
+            
+//            numberOfBytesRead = [(NSInputStream *)aStream read:inputBuffer maxLength:1024];
+//            if (numberOfBytesRead) {
+//                
+//                NSData *readData = [[NSData alloc] initWithBytes:inputBuffer length:numberOfBytesRead];
+//                NSString *readString = (NSString *)[NSKeyedUnarchiver unarchiveObjectWithData:readData];
+//                NSLog(@"%@", readString);
+//            }
+            
+            
+            
+//            [(NSInputStream *)aStream getBuffer:inputBuffer length:&bytesAvailable];
+//            printf("%d\n", bytesAvailable);
+//            
             
             break;
             
+        case NSStreamEventHasSpaceAvailable:
+            NSLog(@"SPACE AVAILABLE");
+            
+            break;
         default:
             break;
     }
+}
+
+
+- (void)readAndPrint{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        uint8_t inputBuffer[1024];
+        NSInteger numberOfBytesRead = 0;
+        
+        numberOfBytesRead = [inputStream read:inputBuffer maxLength:2048];
+        
+        NSData *read = [[NSData alloc]initWithBytes:inputBuffer length:numberOfBytesRead];
+        NSString *string = [NSKeyedUnarchiver unarchiveObjectWithData:read];
+        
+        NSLog(@"%@", string);
+    });
+    
 }
 
 @end

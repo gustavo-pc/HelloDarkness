@@ -16,9 +16,11 @@ class ReceiveViewController: UIViewController, MCSessionDelegate {
     var myID: MCPeerID?
     var myAdvertiser: MCAdvertiserAssistant?
     var mySession: MCSession?
-    var inputStream: NSInputStream?
+//    var inputStream: NSInputStream?
     
     var player = AudioStreamPlayer();
+    
+    @IBOutlet weak var readButton: UIButton!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,8 +55,12 @@ class ReceiveViewController: UIViewController, MCSessionDelegate {
         myAdvertiser?.stop()
     }
     
-    //MARK: Session Delegate
+    @IBAction func readBytes() {
+        player.readAndPrint()
+    }
     
+    
+    //MARK: Session Delegate
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
         switch state {
         case .Connected:
@@ -77,16 +83,12 @@ class ReceiveViewController: UIViewController, MCSessionDelegate {
     func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID: MCPeerID!) {
         
         println("recebi stream")
-        player.inputStream = stream
-        inputStream?.delegate = self.player
-        inputStream?.scheduleInRunLoop(NSRunLoop.mainRunLoop(), forMode: NSDefaultRunLoopMode)
-        inputStream?.open()
+        
+        player.setInputStream(stream)
     }
     
-    func session(session: MCSession!, didStartReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, withProgress progress: NSProgress!) {
-    }
+    func session(session: MCSession!, didStartReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, withProgress progress: NSProgress!) {}
     
-    func session(session: MCSession!, didFinishReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, atURL localURL: NSURL!, withError error: NSError!) {
-    }
+    func session(session: MCSession!, didFinishReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, atURL localURL: NSURL!, withError error: NSError!) {}
 
 }
