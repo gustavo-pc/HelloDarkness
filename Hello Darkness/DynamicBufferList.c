@@ -17,7 +17,7 @@ void initalizeDynamicBufferList(DynamicAudioBufferList *bufferList){
 }
 
 void addBuffer(AudioBuffer buffer, DynamicAudioBufferList *inBufferList, dispatch_semaphore_t usingSemaphore){
-    dispatch_semaphore_wait(usingSemaphore, DISPATCH_TIME_NOW);
+//    dispatch_semaphore_wait(usingSemaphore, DISPATCH_TIME_NOW);
     
     inBufferList->mBuffers[inBufferList->mCurrentBuffers].mData = malloc(buffer.mDataByteSize);
     
@@ -28,11 +28,10 @@ void addBuffer(AudioBuffer buffer, DynamicAudioBufferList *inBufferList, dispatc
     
     printf("adicionei na posicao %i\n", (unsigned int)inBufferList->mCurrentBuffers);
     
-    if (inBufferList->mCurrentBuffers >= DBL_CAPACITY) {
-        inBufferList->mCurrentBuffers = 0;
-    }
+    inBufferList->mCurrentBuffers %= DBL_CAPACITY-1;
+
     
-    dispatch_semaphore_signal(usingSemaphore);
+//    dispatch_semaphore_signal(usingSemaphore);
 }
 
 AudioBuffer retrieveBuffer(DynamicAudioBufferList *fromBufferList, dispatch_semaphore_t usingSemaphore){
@@ -40,25 +39,24 @@ AudioBuffer retrieveBuffer(DynamicAudioBufferList *fromBufferList, dispatch_sema
     retrieved.mDataByteSize = 0;
     retrieved.mNumberChannels = 0;
 
-    dispatch_semaphore_wait(usingSemaphore, DISPATCH_TIME_NOW);
-    
-    if (fromBufferList->mPlayPosition < fromBufferList->mCurrentBuffers) {
+ //   dispatch_semaphore_wait(usingSemaphore, DISPATCH_TIME_NOW);
+
+    if (fromBufferList->mPlayPosition != fromBufferList->mCurrentBuffers) {
         retrieved.mDataByteSize = fromBufferList->mBuffers[fromBufferList->mPlayPosition].mDataByteSize;
         retrieved.mNumberChannels = fromBufferList->mBuffers[fromBufferList->mPlayPosition].mNumberChannels;
         retrieved.mData = malloc(fromBufferList->mBuffers[fromBufferList->mPlayPosition].mDataByteSize);
         memcpy(retrieved.mData, fromBufferList->mBuffers[fromBufferList->mPlayPosition].mData, fromBufferList->mBuffers[fromBufferList->mPlayPosition].mDataByteSize);
         
-        free(fromBufferList->mBuffers[fromBufferList->mPlayPosition].mData);
+//        if(fromBufferList->mBuffers[fromBufferList->mPlayPosition].mData != NULL)
+//            free(fromBufferList->mBuffers[fromBufferList->mPlayPosition].mData);
         
         fromBufferList->mPlayPosition++;
         
         printf("lendo na posicao %i\n", (unsigned int)fromBufferList->mPlayPosition);
     }
     
-    if (fromBufferList->mPlayPosition >= DBL_CAPACITY) {
-        fromBufferList->mPlayPosition = 0;
-    }
+    fromBufferList->mPlayPosition %= (DBL_CAPACITY-1);
     
-    dispatch_semaphore_signal(usingSemaphore);
+ //   dispatch_semaphore_signal(usingSemaphore);
     return retrieved;
 }
