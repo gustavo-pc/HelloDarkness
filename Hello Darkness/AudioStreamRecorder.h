@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-
+#define SAMPLE_RATE 8000.0
 
 
 
@@ -22,12 +22,12 @@
 @end
 
 
-@interface AudioStreamRecorder : NSObject{
+@interface AudioStreamRecorder : NSObject {
 @public AudioUnit myUnit;
     
 }
 
-
+@property NSOutputStream *outputStream;
 
 @property BOOL outputMuted;
 

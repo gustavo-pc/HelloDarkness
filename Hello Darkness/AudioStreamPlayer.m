@@ -43,7 +43,7 @@ static OSStatus playbackCallback (void *inRefCon,
     NSError *err;
     [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&err];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error: &err];
-    [session setPreferredSampleRate:44100.0 error: &err];
+    [session setPreferredSampleRate:SAMPLE_RATE error: &err];
     [session setActive:YES error:&err];
 }
 
@@ -86,7 +86,7 @@ static OSStatus playbackCallback (void *inRefCon,
 
 - (AudioStreamBasicDescription)streamDescription {
     AudioStreamBasicDescription description = {0};
-    description.mSampleRate = 44100.0;
+    description.mSampleRate = SAMPLE_RATE;
     description.mFormatID = kAudioFormatLinearPCM;
     description.mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
     description.mFramesPerPacket	= 1;
@@ -143,6 +143,22 @@ static OSStatus playbackCallback (void *inRefCon,
 //        printf("liguei por codigo\n");
     }
     
+}
+
+
+#pragma NSStream Delegate
+
+-(void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode{
+    switch (eventCode) {
+        case NSStreamEventHasBytesAvailable:
+            //TODO: Magic Here
+            
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

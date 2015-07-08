@@ -14,13 +14,14 @@
 @import AVFoundation;
 
 
-@interface AudioStreamPlayer : NSObject {
+@interface AudioStreamPlayer : NSObject <NSStreamDelegate> {
     AudioUnit playbackUnit;
     NSArray *receivedBuffers;
     
     @public DynamicAudioBufferList unplayedBuffers;
 }
 
+@property NSInputStream *inputStream;
 
 @property int accumulatedBuffersBeforeStarting;
 

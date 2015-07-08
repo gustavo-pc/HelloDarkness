@@ -60,10 +60,9 @@ static OSStatus mySelfWrittenCallback(void *inRefCon,
     NSError *err;
     [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&err];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error: &err];
-    [session setPreferredSampleRate:44100.0 error: &err];
+    [session setPreferredSampleRate:SAMPLE_RATE error: &err];
     [session setActive:YES error:&err];
     
-    //    NSLog(@"Current sample rate: %f", session.sampleRate);
 }
 
 - (void)configureAudioUnitsWithCallback{
@@ -95,7 +94,7 @@ static OSStatus mySelfWrittenCallback(void *inRefCon,
     errorCheck = AudioUnitInitialize(myUnit);
     [self checkForError:errorCheck];
     
-    printf("A a o S m g\n");
+//    printf("A a o S m g\n");
 }
 
 
@@ -115,7 +114,7 @@ static OSStatus mySelfWrittenCallback(void *inRefCon,
 
 - (AudioStreamBasicDescription)streamDescription {
     AudioStreamBasicDescription description = {0};
-    description.mSampleRate = 44100.0;
+    description.mSampleRate = SAMPLE_RATE;
     description.mFormatID = kAudioFormatLinearPCM;
     description.mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
     description.mFramesPerPacket	= 1;
