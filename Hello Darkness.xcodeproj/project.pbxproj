@@ -15,7 +15,6 @@
 		EC2FF67A1B1C7A2400AF6574 /* Hello_DarknessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6791B1C7A2400AF6574 /* Hello_DarknessTests.swift */; };
 		EC2FF6841B1C851400AF6574 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6831B1C851400AF6574 /* SendViewController.swift */; };
 		EC2FF6861B1C852700AF6574 /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF6851B1C852700AF6574 /* ReceiveViewController.swift */; };
-		EC2FF68B1B1C859E00AF6574 /* Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FF68A1B1C859E00AF6574 /* Recorder.m */; };
 		EC2FF68D1B1C86FF00AF6574 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2FF68C1B1C86FF00AF6574 /* Foundation.framework */; };
 		EC2FF68F1B1C874F00AF6574 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2FF68E1B1C874F00AF6574 /* AudioToolbox.framework */; };
 		ECAC63841B1F414B00920415 /* AudioStreamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = ECAC63831B1F414B00920415 /* AudioStreamRecorder.m */; };
@@ -46,9 +45,7 @@
 		EC2FF6791B1C7A2400AF6574 /* Hello_DarknessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello_DarknessTests.swift; sourceTree = "<group>"; };
 		EC2FF6831B1C851400AF6574 /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		EC2FF6851B1C852700AF6574 /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
-		EC2FF6871B1C857800AF6574 /* Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recorder.h; sourceTree = "<group>"; };
 		EC2FF6891B1C859E00AF6574 /* Hello Darkness-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hello Darkness-Bridging-Header.h"; sourceTree = "<group>"; };
-		EC2FF68A1B1C859E00AF6574 /* Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recorder.m; sourceTree = "<group>"; };
 		EC2FF68C1B1C86FF00AF6574 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC2FF68E1B1C874F00AF6574 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		ECAC63821B1F414B00920415 /* AudioStreamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamRecorder.h; sourceTree = "<group>"; };
@@ -113,8 +110,6 @@
 		EC2FF6611B1C7A2400AF6574 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EC2FF6871B1C857800AF6574 /* Recorder.h */,
-				EC2FF68A1B1C859E00AF6574 /* Recorder.m */,
 				EC2FF68E1B1C874F00AF6574 /* AudioToolbox.framework */,
 				EC2FF68C1B1C86FF00AF6574 /* Foundation.framework */,
 				EC2FF6631B1C7A2400AF6574 /* AppDelegate.swift */,
@@ -261,7 +256,6 @@
 				ECAC63841B1F414B00920415 /* AudioStreamRecorder.m in Sources */,
 				ECAC63861B1F7AD200920415 /* AudioStreamPlayer.m in Sources */,
 				EC2FF6641B1C7A2400AF6574 /* AppDelegate.swift in Sources */,
-				EC2FF68B1B1C859E00AF6574 /* Recorder.m in Sources */,
 				EC2FF6841B1C851400AF6574 /* SendViewController.swift in Sources */,
 				ECDA11B61B31DDC600693415 /* DynamicBufferList.c in Sources */,
 			);
